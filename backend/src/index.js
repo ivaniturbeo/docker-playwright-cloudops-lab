@@ -16,6 +16,23 @@ app.post('/api/items', addItem);
 app.put('/api/items/:id', updateItem);
 app.delete('/api/items/:id', deleteItem);
 
+// Health endpoint for release validation
+app.get('/health', async (req, res) => {
+  try {
+    await db.ping?.(); // if ping exists, use it
+    res.status(200).json({
+      status: 'ok',
+      service: 'backend',
+      time: new Date().toISOString()
+    });
+  } catch (err) {
+    res.status(500).json({
+      status: 'error',
+      message: 'Database not reachable'
+    });
+  }
+});
+
 db.init()
     .then(() => {
         app.listen(3000, () => console.log('Listening on port 3000'));
