@@ -1,0 +1,15 @@
+{
+  "name": "getting-started-todo-app",
+  "version": "1.0.0",
+  "description": "This project provides a sample todo list application. It demonstrates all of\r the current Docker best practices, ranging from the Compose file, to the\r Dockerfile, to CI (using GitHub Actions), and running tests. It's intended to \r be well-documented to ensure anyone can come in and easily learn.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1"
+  }
+}
